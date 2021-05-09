@@ -1,4 +1,3 @@
-<!-- 還沒成功算出訂單總額並且印出來 -->
 <?php
 session_start();
 require_once './db.inc.php';
@@ -12,16 +11,16 @@ require_once './templates/tpl-header.php';
             <tr class=" justify-content-center">
                 <td style="width: 80px;">訂單編號</td>
                 <td style="width: 190px;">成立時間</td>
-                <td style="width: 100px;">總金額</td>
                 <td style="width: 270px;">商品名稱</td>
                 <td style="width: 80px;">價格</td>
                 <td style="width: 80px;">數量</td>
                 <td style="width: 100px;">小計</td>
+                <td style="width: 100px;">總金額</td>
             </tr>
         </thead>
         <tbody>
         <?php
-            $sqlOrder = "SELECT `orderId`,`orderPrice`,`created_at`
+            $sqlOrder = "SELECT `orderId`,`created_at`
             FROM `orders` 
             WHERE `username` = ? 
             ORDER BY `orderId` DESC";
@@ -35,15 +34,12 @@ require_once './templates/tpl-header.php';
                     `order_items`.`checkQty`,
                     `order_items`.`checkSubtotal`,
                     `items`.`itemName`,
-                    `categories`.`categoryName`,
-                    `orders`.`orderPrice`
+                    `categories`.`categoryName`
                     FROM `order_items` 
                     INNER JOIN `items`
                     ON `order_items`.`orderItemsId` = `items`.`itemId`
                     INNER JOIN `categories` 
                     ON `items`.`itemCategoryId` = `categories`.`categoryId`
-                    INNER JOIN `orders`
-                    ON `orders`.`orderId` = `order_items`.`orderId`
                     WHERE `order_items`.`orderId` = ? 
                     ORDER BY `order_items`.`id` ASC";
                     $stmtOrderItems = $pdo->prepare($sqlOrderItems);
@@ -57,7 +53,6 @@ require_once './templates/tpl-header.php';
                         <tr >
                             <td rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]["orderId"] ?></td>
                             <td rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]['created_at'] ?></td>
-                            <td rowspan="<?php echo count($arrOrderItems) ?>">$<?php $arrOrders[$i]['orderPrice']?></td>
                             <?php
                         for($j=0; $j<count($arrOrderItems); $j++){
                             if($j!==0){ ?><tr><?php }
@@ -68,7 +63,7 @@ require_once './templates/tpl-header.php';
                             <td>小計<?php echo $arrOrderItems[$j]["checkSubtotal"] ?></td>
                             <?php
                             if($j==0){
-                             ?>  <?php
+                             ?> <td>總金額</td> <?php
                             }
                             ?> </tr> <?php
                         }

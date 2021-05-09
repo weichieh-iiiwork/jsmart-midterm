@@ -12,10 +12,11 @@ try{
     //開啟交易功能,可用於報名人數
     $pdo->beginTransaction();
 
-        $sqlOrder = "INSERT INTO `orders` (`username`) VALUES (?)";
+        $sqlOrder = "INSERT INTO `orders` (`username`, `orderPrice`) VALUES (?, ?)";
         $stmtOrder = $pdo->prepare($sqlOrder);
         $arrParamOrder = [
-            $_SESSION['userAccount']
+            $_SESSION['userAccount'],
+            (int)$_POST['orderPrice']
         ];
         $stmtOrder->execute($arrParamOrder);
 

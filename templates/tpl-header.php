@@ -11,11 +11,17 @@
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
     <title>JSMART</title>
+    <style type="text/css">
+	#contentTable{
+		table-layout:fixed; /* bootstrap-table設定colmuns中某列的寬度無效時，需要給整個表設定css屬性 */
+		word-break:break-all; word-wrap:break-all; /* 自動換行 */
+	}
+    </style>
     <style>
     
-    /* * {
+    * {
         outline: 1px solid red;
-    } */
+    }
     </style>
 </head>
 

@@ -78,6 +78,7 @@ require_once './templates/tpl-header.php';
                     <input type="hidden" name="itemPrice[]" value="<?php echo $arr[$i]["itemPrice"] ?>">
                     <input type="hidden" class="form-control" name="cartQty[]" value="<?php echo $arr[$i]["cartQty"] ?>" maxlength="3">
                     <input type="hidden" class="form-control" name="subtotal[]" value="<?php echo ($arr[$i]["itemPrice"] * $arr[$i]["cartQty"]) ?>" maxlength="10">
+                    
                 <?php
                 }
             ?>
@@ -88,6 +89,8 @@ require_once './templates/tpl-header.php';
             <div class="row flex-column align-items-end mr-5">
                 <h4 class="mt-2">目前總額: <mark id="total"><?php echo $total ?></mark></h4>
                 <input class="btn btn-info mt-2 mr-3" style="width: 10%;" type="submit" name="smb" value="送出">
+                <!-- 訂單總額 -->
+                <input type="hidden" class="form-control" name="orderPrice[]" value="<?php echo $total ?>" maxlength="10">
             </div>
             
         <?php } ?>
