@@ -57,15 +57,15 @@ require_once './templates/tpl-header.php';
                         <tr >
                             <td rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]["orderId"] ?></td>
                             <td rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]['created_at'] ?></td>
-                            <td rowspan="<?php echo count($arrOrderItems) ?>">$<?php $arrOrders[$i]['orderPrice']?></td>
+                            <td rowspan="<?php echo count($arrOrderItems) ?>">$<?php echo $arrOrders[$i]['orderPrice']?></td>
                             <?php
                         for($j=0; $j<count($arrOrderItems); $j++){
                             if($j!==0){ ?><tr><?php }
                             ?>
-                            <td>名稱<?php echo $arrOrderItems[$j]["itemName"] ?></td>
-                            <td>價格<?php echo $arrOrderItems[$j]["checkPrice"] ?></td>
-                            <td>數量<?php echo $arrOrderItems[$j]["checkQty"] ?></td>
-                            <td>小計<?php echo $arrOrderItems[$j]["checkSubtotal"] ?></td>
+                            <td><?php echo $arrOrderItems[$j]["itemName"] ?></td>
+                            <td>$ <?php echo $arrOrderItems[$j]["checkPrice"] ?></td>
+                            <td><?php echo $arrOrderItems[$j]["checkQty"] ?></td>
+                            <td>$ <?php echo $arrOrderItems[$j]["checkSubtotal"] ?></td>
                             <?php
                             if($j==0){
                              ?>  <?php

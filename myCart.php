@@ -21,6 +21,8 @@ require_once './templates/tpl-header.php';
             </thead>
             <tbody>
             <?php
+                //  5/10 修正直接按購物車會出現"undefined array key"cart"的error 
+                if( !isset($_SESSION['cart']) ) $_SESSION['cart'] = [];
                 //放置結合當前資料庫資料的購物車資訊
                 $arr = [];
                 $total = 0;
@@ -56,7 +58,7 @@ require_once './templates/tpl-header.php';
                 for($i = 0; $i < count($arr); $i++){
                     //計算總額
                     $total += $arr[$i]["itemPrice"] * $arr[$i]["cartQty"];
-                ?>
+                    ?>
                     <tr class="row justify-content-center text-center">
                         <td class="col-4 ">
                             <div class="d-flex">
@@ -90,7 +92,7 @@ require_once './templates/tpl-header.php';
                 <h4 class="mt-2">目前總額: <mark id="total"><?php echo $total ?></mark></h4>
                 <input class="btn btn-info mt-2 mr-3" style="width: 10%;" type="submit" name="smb" value="送出">
                 <!-- 訂單總額 -->
-                <input type="hidden" class="form-control" name="orderPrice[]" value="<?php echo $total ?>" maxlength="10">
+                <input type="hidden" class="form-control" name="orderPrice" value="<?php echo $total ?>" maxlength="10">
             </div>
             
         <?php } ?>
