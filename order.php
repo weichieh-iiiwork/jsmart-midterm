@@ -7,7 +7,7 @@ require_once './templates/tpl-header.php';
 
 <!-- order.php -->
 <div class="container mt-5">
-    <table id="contentTable" class="table table-hover text-center">
+    <table id="contentTable" class="table text-center">
         <thead>
             <tr class=" justify-content-center">
                 <td style="width: 80px;">訂單編號</td>
@@ -55,9 +55,9 @@ require_once './templates/tpl-header.php';
                         $arrOrderItems = $stmtOrderItems->fetchAll();
                         ?>
                         <tr >
-                            <td rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]["orderId"] ?></td>
-                            <td rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]['created_at'] ?></td>
-                            <td rowspan="<?php echo count($arrOrderItems) ?>">$<?php echo $arrOrders[$i]['orderPrice']?></td>
+                            <td style="vertical-align : middle;" rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]["orderId"] ?></td>
+                            <td style="vertical-align : middle;" rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]['created_at'] ?></td>
+                            <td style="vertical-align : middle;" rowspan="<?php echo count($arrOrderItems) ?>">$<?php echo $arrOrders[$i]['orderPrice']?></td>
                             <?php
                         for($j=0; $j<count($arrOrderItems); $j++){
                             if($j!==0){ ?><tr><?php }
