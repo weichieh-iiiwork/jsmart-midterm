@@ -19,7 +19,7 @@ session_start();
         }
         .wrap {
             width: 400px;
-            height: 400px;
+            height: 450px;
             background-color: var(--bgColor);
             border-radius: 20px;
         }
@@ -40,6 +40,13 @@ session_start();
                 <label class="text-dark ml-5 mt-3">密碼：</label>
 
                 <input class="w-75 form-control mx-auto" type="password" name="userPassword" value="" maxlength="40" />
+
+                <div class="d-flex mt-3">
+                    <label class="text-dark ml-5 mt-3">買家</label>
+                    <input class="form-control w-25" type="radio" name="identity" value="users" checked />
+                    <label class="text-dark ml-5 mt-3">賣家</label>
+                    <input class="form-control w-25" type="radio" name="identity" value="admin" />
+                </div>
                 <input class="w-25 form-control mx-auto mt-5" type="submit" value="登入" />
         </form>
 
