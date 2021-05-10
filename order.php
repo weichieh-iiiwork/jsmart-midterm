@@ -66,11 +66,7 @@ require_once './templates/tpl-header.php';
                             <td>$ <?php echo $arrOrderItems[$j]["checkPrice"] ?></td>
                             <td><?php echo $arrOrderItems[$j]["checkQty"] ?></td>
                             <td>$ <?php echo $arrOrderItems[$j]["checkSubtotal"] ?></td>
-                            <?php
-                            if($j==0){
-                             ?>  <?php
-                            }
-                            ?> </tr> <?php
+                            </tr> <?php
                         }
                     }
                     ?>
