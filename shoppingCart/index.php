@@ -1,8 +1,8 @@
 <!-- 剛開始忘記連session會導致if isset session判斷失敗 -->
 <?php 
 session_start();
-require_once './db.inc.php';
-require './templates/tpl-header.php'
+require_once '../db.inc.php';
+require '../templates/tpl-header.php'
 ?>
 
 
@@ -43,7 +43,7 @@ require './templates/tpl-header.php'
                 <div class="col-6 col-md-4">
                     <div class="card mb-4">
                         <a href="./itemDetail.php?itemId=<?php echo $arr[$i]['itemId']?>">
-                            <img src="./images/items/<?php echo $arr[$i]['itemImg'] ?>" class="card-img-top" alt="...">
+                            <img src="../images/items/<?php echo $arr[$i]['itemImg'] ?>" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             <h5 class="card-text mb-4 font-weight-bold"><?php echo $arr[$i]['itemName'] ?></h5>
@@ -66,7 +66,7 @@ require './templates/tpl-header.php'
 </div>
 
 <?php
-require_once './templates/tpl-footer.php';
+require_once '../templates/tpl-footer.php';
 ?>
 
     

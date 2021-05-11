@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once './db.inc.php';
-require_once './templates/tpl-header.php';
+require_once '../db.inc.php';
+require_once '../templates/tpl-header.php';
 ?>
 
 <!-- editCart.php -->
@@ -48,7 +48,7 @@ require_once './templates/tpl-header.php';
                 <tr class="row justify-content-center text-center">
                     <td class="col-4 ">
                         <div class="d-flex">
-                            <img class="img-fluid rounded shadow-sm" width="70" src="./images/items/<?php echo $arrItem["itemImg"] ?>" alt="">
+                            <img class="img-fluid rounded shadow-sm" width="70" src="../images/items/<?php echo $arrItem["itemImg"] ?>" alt="">
                             <div>
                                 <h5><?php echo $arrItem["itemName"] ?></h5>
                                 <span>Category:<?php echo $arrItem["categoryName"] ?></span>
@@ -83,5 +83,5 @@ require_once './templates/tpl-header.php';
 
 
 <?php
-require_once './templates/tpl-footer.php';
+require_once '../templates/tpl-footer.php';
 ?>

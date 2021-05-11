@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once './db.inc.php';
+require_once '../db.inc.php';
 $objResponse['success'] = false;
 $objResponse['info'] = "登入失敗";
     

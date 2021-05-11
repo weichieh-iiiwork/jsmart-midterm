@@ -1,7 +1,7 @@
 <?php 
 session_start();
-require_once './db.inc.php';
-require './templates/tpl-header.php'
+require_once '../db.inc.php';
+require '../templates/tpl-header.php'
 ?>
 
 <!-- 商品詳細頁面 -->
@@ -33,7 +33,7 @@ require './templates/tpl-header.php'
             $arrItem = $stmt->fetchAll()[0];
             ?>
             <div class="col">
-                <img src="./images/items/<?php echo $arrItem["itemImg"];?>" class="itemImg" alt="...">
+                <img src="../images/items/<?php echo $arrItem["itemImg"];?>" class="itemImg" alt="...">
             </div>
             <div class="col">
                 <div>
@@ -72,5 +72,5 @@ require './templates/tpl-header.php'
 </div>
 
 <?php
-require_once './templates/tpl-footer.php';
+require_once '../templates/tpl-footer.php';
 ?>

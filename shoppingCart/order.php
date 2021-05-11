@@ -1,8 +1,8 @@
 <!-- 還沒成功算出訂單總額並且印出來 -->
 <?php
 session_start();
-require_once './db.inc.php';
-require_once './templates/tpl-header.php';
+require_once '../db.inc.php';
+require_once '../templates/tpl-header.php';
 ?>
 
 <!-- order.php -->
@@ -83,5 +83,5 @@ require_once './templates/tpl-header.php';
 
 
 <?php
-require_once './templates/tpl-footer.php';
+require_once '../templates/tpl-footer.php';
 ?>

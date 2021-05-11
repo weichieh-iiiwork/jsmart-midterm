@@ -1,6 +1,6 @@
 <?php
 require_once './checkSession.php';
-require_once './db.inc.php';
+require_once '../db.inc.php';
 
 $objResponse = [];
 $objResponse['success'] = false;
