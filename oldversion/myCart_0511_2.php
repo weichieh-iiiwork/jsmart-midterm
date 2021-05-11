@@ -9,14 +9,14 @@ require_once './templates/tpl-header.php';
 <div class="container mt-5">
     <form name="myCartForm" method="POST" action="./addOrder.php">
 
-        <table id="contentTable" class="table table-hover" >
+        <table class="table table-hover">
             <thead>
-                <tr class="justify-content-center text-center" >
-                    <td style="width: 160px; ">商品名稱</td>
-                    <td style="width: 60px; ">價格</td>
-                    <td style="width: 60px;">數量</td>
-                    <td style="width: 60px;">小計</td>
-                    <td style="width: 60px;">功能</td>
+                <tr class="row justify-content-center text-center">
+                    <td class="col-4">商品名稱</td>
+                    <td class="col-2">價格</td>
+                    <td class="col-2">數量</td>
+                    <td class="col-2">小計</td>
+                    <td class="col-1">功能</td>
                 </tr>
             </thead>
             <tbody>
@@ -60,20 +60,20 @@ require_once './templates/tpl-header.php';
                     //計算總額
                     $total += $arr[$i]["itemPrice"] * $arr[$i]["cartQty"];
                 ?>
-                    <tr class="justify-content-center text-center">
-                        <td style="vertical-align : middle;">
+                    <tr class="row justify-content-center text-center">
+                        <td class="col-4 ">
                             <div class="d-flex">
-                                <img class="img-fluid rounded shadow-sm mr-3" width="70" src="./images/items/<?php echo $arr[$i]["itemImg"] ?>" alt="">
+                                <img class="img-fluid rounded shadow-sm" width="70" src="./images/items/<?php echo $arr[$i]["itemImg"] ?>" alt="">
                                 <div>
                                     <h5><?php echo $arr[$i]["itemName"] ?></h5>
-                                    <p class="font-italic">Category:<?php echo $arr[$i]["categoryName"] ?></p>
+                                    <span>Category:<?php echo $arr[$i]["categoryName"] ?></span>
                                 </div>
                             </div>
                         </td>
-                        <td style="vertical-align : middle;">$ <?php echo $arr[$i]["itemPrice"] ?></td>
-                        <td style="vertical-align : middle;"> <?php echo $arr[$i]["cartQty"] ?></td>
-                        <td style="vertical-align : middle;"> $ <?php echo ($arr[$i]["itemPrice"] * $arr[$i]["cartQty"]) ?></td>
-                        <td style="vertical-align : middle;">
+                        <td class="col-2">$ <?php echo $arr[$i]["itemPrice"] ?></td>
+                        <td class="col-2"> <?php echo $arr[$i]["cartQty"] ?></td>
+                        <td class="col-2"> $ <?php echo ($arr[$i]["itemPrice"] * $arr[$i]["cartQty"]) ?></td>
+                        <td class="col-1">
                             <!-- 傳送editCart值 -->
                             <a href="./editCart.php?editCartId=<?php echo $i ?>" class="text-dark">編輯</a><br>
                             <a href="./deleteCart.php?idx=<?php echo $i ?>" class="text-dark">刪除</a><br>
