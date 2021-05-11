@@ -9,7 +9,7 @@ $objResponse['cartItemNum'] = 0;
 
 //判斷是否有收到cartQty和itemId的值
 if( !isset($_POST['cartQty']) || !isset($_POST['itemId']) ){
-    header("Refresh: 3; url=./itemList.php");
+    header("Refresh: 3; url=./index.php");
     $objResponse['info'] = "資料傳遞有誤";
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
     exit();

@@ -57,7 +57,7 @@ require_once './templates/tpl-header.php';
                         <tr >
                             <td style="vertical-align : middle;" rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]["orderId"] ?></td>
                             <td style="vertical-align : middle;" rowspan="<?php echo count($arrOrderItems) ?>"><?php echo $arrOrders[$i]['created_at'] ?></td>
-                            <td style="vertical-align : middle;" rowspan="<?php echo count($arrOrderItems) ?>">$<?php echo $arrOrders[$i]['orderPrice']?></td>
+                            <td style="vertical-align : middle;" rowspan="<?php echo count($arrOrderItems) ?>">$ <?php echo $arrOrders[$i]['orderPrice']?></td>
                             <?php
                         for($j=0; $j<count($arrOrderItems); $j++){
                             if($j!==0){ ?><tr><?php }
