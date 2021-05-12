@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once '../db.inc.php';
-require_once '../templates/adtpl-header.php';
+require_once './db.inc.php';
+require_once './templates/adtpl-header.php';
 
 ?>
 <div class="bg-light p-3">
@@ -67,4 +67,4 @@ require_once '../templates/adtpl-header.php';
         </div>
     </div>
 
-    <?php require_once '../templates/adtpl-footer.php'; ?>
+    <?php require_once './templates/adtpl-footer.php'; ?>
